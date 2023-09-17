@@ -36,7 +36,7 @@ fmt:
 
 .PHONY: release
 release:
-	$(PYTHON) setup.py release --sign --verbose
+	cd $(PKG_BUILD_DIR) && $(PYTHON) setup.py release --sign --verbose
 	$(MAKE) clean
 
 .PHONY: setup-ci
