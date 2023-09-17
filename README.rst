@@ -7,6 +7,7 @@ Summary
 ============================================
 
 ``pathvalidate-cli`` is a command line interface for `pathvalidate <https://github.com/thombashi/pathvalidate>`__ library.
+The tool can do sanitize/validate strings such as file-names/file-paths.
 
 .. image:: https://badge.fury.io/py/pathvalidate-cli.svg
     :target: https://badge.fury.io/py/pathvalidate-cli
@@ -35,6 +36,9 @@ Installation
 Usage
 ============================================
 
+Sanitize file paths
+--------------------------------------------
+
 ::
 
     $ pathvalidate sanitize 'fi:l*e/p"a?t>h|.t<xt'
@@ -42,6 +46,13 @@ Usage
     $ pathvalidate --filename sanitize 'fi:l*e/p"a?t>h|.t<xt'
     filepath.txt
 
+Validate file paths
+--------------------------------------------
+
+::
+
+    $ pathvalidate validate file/path.txt
+    $ 
     $ pathvalidate validate 'fi:l*e/p"a?t>h|.t<xt'
     [PV1100] invalid characters found: invalids=(':', '*', '"', '?', '>', '|', '<'), value='fi:l*e/p"a?t>h|.t<xt', platform=Windows
 
