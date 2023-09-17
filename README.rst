@@ -6,7 +6,23 @@
 Summary
 ============================================
 
-pathvalidate-cli is a command line interface for `pathvalidate <https://github.com/thombashi/pathvalidate>`__ library.
+``pathvalidate-cli`` is a command line interface for `pathvalidate <https://github.com/thombashi/pathvalidate>`__ library.
+
+.. image:: https://badge.fury.io/py/pathvalidate-cli.svg
+    :target: https://badge.fury.io/py/pathvalidate-cli
+    :alt: PyPI package version
+
+.. image:: https://img.shields.io/pypi/pyversions/pathvalidate-cli.svg
+    :target: https://pypi.org/project/pathvalidate-cli
+    :alt: Supported Python versions
+
+.. image:: https://github.com/thombashi/pathvalidate-cli/workflows/Tests/badge.svg
+    :target: https://github.com/thombashi/pathvalidate-cli/actions?query=workflow%3ATests
+    :alt: Linux/macOS/Windows CI status
+
+.. image:: https://github.com/thombashi/pathvalidate-cli/actions/workflows/github-code-scanning/codeql/badge.svg
+    :target: https://github.com/thombashi/pathvalidate-cli/actions/workflows/github-code-scanning/codeql
+    :alt: CodeQL
 
 
 Installation
@@ -62,3 +78,9 @@ Command Help
 Dependencies
 ============================================
 Python 3.8+
+
+
+Related Project
+============================================
+
+- `pathvalidate <https://github.com/thombashi/pathvalidate>`__
