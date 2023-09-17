@@ -16,9 +16,9 @@ Summary
     :target: https://pypi.org/project/pathvalidate-cli
     :alt: Supported Python versions
 
-.. image:: https://github.com/thombashi/pathvalidate-cli/workflows/Tests/badge.svg
-    :target: https://github.com/thombashi/pathvalidate-cli/actions?query=workflow%3ATests
-    :alt: Linux/macOS/Windows CI status
+.. image:: https://github.com/thombashi/pathvalidate-cli/actions/workflows/ci.yml/badge.svg
+    :target: https://github.com/thombashi/pathvalidate-cli/actions/workflows/ci.yml
+    :alt: CI status of Linux/macOS/Windows
 
 .. image:: https://github.com/thombashi/pathvalidate-cli/actions/workflows/github-code-scanning/codeql/badge.svg
     :target: https://github.com/thombashi/pathvalidate-cli/actions/workflows/github-code-scanning/codeql
