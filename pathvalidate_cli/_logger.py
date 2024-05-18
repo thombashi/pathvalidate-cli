@@ -7,9 +7,9 @@ from ._const import MODULE_NAME
 
 
 class LogLevel:
-    DEBUG: Final[str] = "DEBUG"
-    INFO: Final[str] = "INFO"
-    QUIET: Final[str] = "QUIET"
+    DEBUG: Final = "DEBUG"
+    INFO: Final = "INFO"
+    QUIET: Final = "QUIET"
 
 
 logger.disable(MODULE_NAME)

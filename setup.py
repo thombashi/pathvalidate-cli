@@ -4,11 +4,11 @@ from typing import Dict, Final, Type
 import setuptools
 
 
-MODULE_NAME: Final[str] = "pathvalidate-cli"
-MODULE_NAME_UNDERSCORE: Final[str] = MODULE_NAME.replace("-", "_")
-REPOSITORY_URL: Final[str] = f"https://github.com/thombashi/{MODULE_NAME:s}"
-REQUIREMENT_DIR: Final[str] = "requirements"
-ENCODING: Final[str] = "utf8"
+MODULE_NAME: Final = "pathvalidate-cli"
+MODULE_NAME_UNDERSCORE: Final = MODULE_NAME.replace("-", "_")
+REPOSITORY_URL: Final = f"https://github.com/thombashi/{MODULE_NAME:s}"
+REQUIREMENT_DIR: Final = "requirements"
+ENCODING: Final = "utf8"
 
 pkg_info: Dict[str, str] = {}
 

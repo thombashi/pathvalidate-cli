@@ -1,4 +1,4 @@
 from typing import Final
 
 
-MODULE_NAME: Final[str] = "pathvalidate-cli"
+MODULE_NAME: Final = "pathvalidate-cli"

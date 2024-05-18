@@ -23,7 +23,7 @@ from ._const import MODULE_NAME
 from ._logger import LogLevel, initialize_logger, logger
 
 
-COMMAND_EPILOG: Final[str] = dedent(
+COMMAND_EPILOG: Final = dedent(
     f"""\
     Issue tracker: https://github.com/thombashi/{MODULE_NAME}/issues
     """
