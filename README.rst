@@ -7,21 +7,23 @@ Summary
 ============================================
 
 ``pathvalidate-cli`` is a command line interface for `pathvalidate <https://github.com/thombashi/pathvalidate>`__ library.
-The tool can do sanitize/validate strings such as file-names/file-paths.
+The tool can sanitize/validate strings such as file-names/file-paths.
 
-.. image:: https://badge.fury.io/py/pathvalidate-cli.svg
+|PyPI pkg ver| |Supported Python ver| |CI status| |CodeQL|
+
+.. |PyPI pkg ver| image:: https://badge.fury.io/py/pathvalidate-cli.svg
     :target: https://badge.fury.io/py/pathvalidate-cli
     :alt: PyPI package version
 
-.. image:: https://img.shields.io/pypi/pyversions/pathvalidate-cli.svg
+.. |Supported Python ver| image:: https://img.shields.io/pypi/pyversions/pathvalidate-cli.svg
     :target: https://pypi.org/project/pathvalidate-cli
     :alt: Supported Python versions
 
-.. image:: https://github.com/thombashi/pathvalidate-cli/actions/workflows/ci.yml/badge.svg
+.. |CI status| image:: https://github.com/thombashi/pathvalidate-cli/actions/workflows/ci.yml/badge.svg
     :target: https://github.com/thombashi/pathvalidate-cli/actions/workflows/ci.yml
     :alt: CI status of Linux/macOS/Windows
 
-.. image:: https://github.com/thombashi/pathvalidate-cli/actions/workflows/github-code-scanning/codeql/badge.svg
+.. |CodeQL| image:: https://github.com/thombashi/pathvalidate-cli/actions/workflows/github-code-scanning/codeql/badge.svg
     :target: https://github.com/thombashi/pathvalidate-cli/actions/workflows/github-code-scanning/codeql
     :alt: CodeQL
 
@@ -69,14 +71,16 @@ Command Help
       -q, --quiet                   Suppress execution log messages.
       --filename                    Consider inputs as filenames.
       --max-len, --max-bytes BYTES  Maximum byte counts of file paths. -1: same
-                                    value with the platform limitation.  [default:
+                                    value as the platform limitation.  [default:
                                     -1]
-      --platform PLATFORM           Execution platform name (case-insensitive).
-                                    Valid platform specifiers are
-                                    Linux/Windows/macOS. Valid special values are:
-                                    POSIX, universal (a) auto: automatically
-                                    detects the execution platform. (b) universal:
-                                    platform independent.  [default: universal]
+      --platform PLATFORM           Target platform name (case-insensitive). Valid
+                                    platform specifiers are Linux/Windows/macOS.
+                                    Valid special values are: auto, universal,
+                                    POSIX (a) auto: automatically detects the
+                                    execution platform. (b) universal: platform
+                                    independent. (c) POSIX: POSIX-compliant
+                                    platform.  [default: universal]
+      --security-check              Enable security checks.
       -v, --verbose                 Verbosity level  [default: 0]
       -h, --help                    Show this message and exit.
 
