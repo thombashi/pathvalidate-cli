@@ -11,6 +11,7 @@ class Test_main:
             [["-h"], 0],
             [["sanitize", "-h"], 0],
             [["validate", "-h"], 0],
+            [["error", "-h"], 0],
         ],
     )
     def test_help(self, options, expected):
