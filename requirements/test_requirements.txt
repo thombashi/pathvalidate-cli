@@ -1,2 +1,2 @@
 pytest>=7
-pytest-md-report>=0.4.1
+pytest-md-report>=0.6
