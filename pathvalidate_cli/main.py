@@ -77,7 +77,7 @@ def print_err(e: ValidationError, fmt: str) -> None:
     type=int,
     show_default=True,
     default=-1,
-    help="Maximum byte counts of file paths. -1: same value with the platform limitation.",
+    help="Maximum byte counts of file paths. -1: same value as the platform limitation.",
 )
 @click.option(
     "--platform",
@@ -86,14 +86,15 @@ def print_err(e: ValidationError, fmt: str) -> None:
     show_default=True,
     help=" ".join(
         [
-            "Execution platform name (case-insensitive).",
+            "Target platform name (case-insensitive).",
             "Valid platform specifiers are Linux/Windows/macOS.",
-            "Valid special values are: POSIX, universal\n",
+            "Valid special values are: auto, universal, POSIX\n",
         ]
     )
     + """\
     (a) auto: automatically detects the execution platform.
     (b) universal: platform independent.
+    (c) POSIX: POSIX-compliant platform.
 """,
 )
 @click.option(
