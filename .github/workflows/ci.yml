@@ -154,4 +154,21 @@ jobs:
       - run: make setup-ci
 
       - name: Run tests
-        run: tox -e py
+        env:
+          REPORT_OUTPUT: md_report.md
+        run: |
+          echo "REPORT_FILE=${REPORT_OUTPUT}" >> "$GITHUB_ENV"
+          tox -e py -- --md-report-output "${REPORT_OUTPUT}"
+
+      - name: Output reports to the job summary when tests fail
+        if: failure() && matrix.os != 'ubuntu-latest'
+        run: |
+          if [ -f "$REPORT_FILE" ]; then
+            echo "<details><summary>Failed Test Report</summary>" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            cat "$REPORT_FILE" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "</details>" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "No failed tests to report"
+          fi
