@@ -157,12 +157,14 @@ jobs:
       - name: Run tests
         env:
           REPORT_OUTPUT: md_report.md
+        shell: bash
         run: |
           echo "REPORT_FILE=${REPORT_OUTPUT}" >> "$GITHUB_ENV"
           tox -e py -- --md-report-output "${REPORT_OUTPUT}"
 
       - name: Output reports to the job summary when tests fail
-        if: failure() && matrix.os != 'ubuntu-latest'
+        if: failure()
+        shell: bash
         run: |
           if [ -f "$REPORT_FILE" ]; then
             echo "<details><summary>Failed Test Report</summary>" >> $GITHUB_STEP_SUMMARY
