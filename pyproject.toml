@@ -52,7 +52,7 @@ md_report_exclude_outcomes = [
 
 [tool.ruff]
 line-length = 100
-target-version = "py37"
+target-version = "py38"
 exclude = [
     ".eggs/",
     ".tox/",
