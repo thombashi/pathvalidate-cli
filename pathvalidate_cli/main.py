@@ -1,7 +1,8 @@
 import sys
+from collections.abc import Sequence
 from enum import Enum, auto, unique
 from textwrap import dedent
-from typing import Final, List, Sequence
+from typing import Final
 
 import click
 import msgfy
@@ -153,7 +154,7 @@ def create_validator(ctx: Context) -> AbstractValidator:
     return FilePathValidator(**kwargs)
 
 
-def to_error_reason_row(code: str) -> List[str]:
+def to_error_reason_row(code: str) -> list[str]:
     for reason in ErrorReason:
         if reason.code != code:
             continue
@@ -187,7 +188,7 @@ def to_error_reason_row(code: str) -> List[str]:
 )
 def sanitize(
     ctx: Context,
-    filepaths: List[str],
+    filepaths: list[str],
     replacement_text: str,
     normalize: bool,
     validate_after_sanitize: bool,
@@ -224,7 +225,7 @@ def sanitize(
     help="Minimum byte counts of file paths.",
 )
 @click.option("--no-check-reserved", is_flag=True, help="Check reserved names.")
-def validate(ctx: Context, filepaths: List[str], min_len: int, no_check_reserved: bool) -> None:
+def validate(ctx: Context, filepaths: list[str], min_len: int, no_check_reserved: bool) -> None:
     """Validate file paths."""
 
     if use_stdin(filepaths):
@@ -256,14 +257,14 @@ def validate(ctx: Context, filepaths: List[str], min_len: int, no_check_reserved
 @click.pass_context
 @click.argument("codes", type=str, nargs=-1)
 @click.option("--list", "list_errors", is_flag=True, help="List error reasons.")
-def error(ctx: Context, codes: List[str], list_errors: bool) -> None:
+def error(ctx: Context, codes: list[str], list_errors: bool) -> None:
     """Print error reasons."""
 
     if len(codes) == 0 and not list_errors:
         click.echo(ctx.get_help())
         ctx.exit()
 
-    errors: List[List[str]] = []
+    errors: list[list[str]] = []
     exit_code = 0
 
     if list_errors:

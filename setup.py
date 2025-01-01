@@ -1,5 +1,5 @@
 import os.path
-from typing import Dict, Final, Type
+from typing import Final
 
 import setuptools
 
@@ -10,10 +10,10 @@ REPOSITORY_URL: Final = f"https://github.com/thombashi/{MODULE_NAME:s}"
 REQUIREMENT_DIR: Final = "requirements"
 ENCODING: Final = "utf8"
 
-pkg_info: Dict[str, str] = {}
+pkg_info: dict[str, str] = {}
 
 
-def get_release_command_class() -> Dict[str, Type[setuptools.Command]]:
+def get_release_command_class() -> dict[str, type[setuptools.Command]]:
     try:
         from releasecmd import ReleaseCommand
     except ImportError:
