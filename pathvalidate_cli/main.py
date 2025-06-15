@@ -224,7 +224,7 @@ def sanitize(
     default=1,
     help="Minimum byte counts of file paths.",
 )
-@click.option("--no-check-reserved", is_flag=True, help="Check reserved names.")
+@click.option("--no-check-reserved", is_flag=False, help="Disable reserved name check.")
 def validate(ctx: Context, filepaths: list[str], min_len: int, no_check_reserved: bool) -> None:
     """Validate file paths."""
 
