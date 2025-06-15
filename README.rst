@@ -80,7 +80,6 @@ Command Help
                                     execution platform. (b) universal: platform
                                     independent. (c) POSIX: POSIX-compliant
                                     platform.  [default: universal]
-      --security-check              Enable security checks.
       -v, --verbose                 Verbosity level  [default: 0]
       -h, --help                    Show this message and exit.
 
@@ -88,6 +87,32 @@ Command Help
       error     Print error reasons.
       sanitize  Sanitize file paths.
       validate  Validate file paths.
+
+::
+
+    Usage: pathvalidate validate [OPTIONS] [FILEPATHS]...
+
+      Validate file paths.
+
+    Options:
+      --min-len, --min-bytes BYTES  Minimum byte counts of file paths.  [default:
+                                    1]
+      --no-check-reserved TEXT      Disable reserved name check.
+      -h, --help                    Show this message and exit.
+
+::
+
+    Usage: pathvalidate sanitize [OPTIONS] [FILEPATHS]...
+
+      Sanitize file paths.
+
+    Options:
+      --replacement-text TEXT    Replacement text for invalid characters. Defaults
+                                 to an empty string (remove invalid strings).
+                                 [default: ""]
+      --normalize                Normalize the path.
+      --validate-after-sanitize  Execute validation after sanitization.
+      -h, --help                 Show this message and exit.
 
 
 Dependencies
